@@ -1,0 +1,40 @@
+/*
+ * Copyright (c) 2020 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "cornecirque.dtsi"
+
+&kscan0 {
+    col-gpios
+        = <&pro_micro 21 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+&pro_micro_i2c {
+    status = "okay";
+
+    glidepoint_left: glidepoint_left@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "okay";
+        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
+        sensitivity = "2x";
+        sleep;
+        //no-taps;
+        //y-invert;
+        x-invert;
+        //scroll;
+    };
+};
+
+&glidepoint_split {
+    device = <&glidepoint_left>;
+    //input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 10>;
+};
