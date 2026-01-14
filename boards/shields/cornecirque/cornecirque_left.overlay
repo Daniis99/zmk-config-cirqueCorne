@@ -27,7 +27,7 @@
         dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
         sensitivity = "3x";
         sleep;
-        no-taps;
+        //no-taps;
         y-invert;
         //x-invert;
         scroll;
