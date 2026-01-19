@@ -36,8 +36,8 @@
         sensitivity = "3x";
         sleep;
         //no-taps;
-        y-invert;
-        //x-invert;
+        //y-invert;
+        x-invert;
     };
 };
 
