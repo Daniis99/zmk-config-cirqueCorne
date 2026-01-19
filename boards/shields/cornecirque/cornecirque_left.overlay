@@ -30,7 +30,6 @@
         //no-taps;
         y-invert;
         //x-invert;
-        scroll;
     };
 };
 
