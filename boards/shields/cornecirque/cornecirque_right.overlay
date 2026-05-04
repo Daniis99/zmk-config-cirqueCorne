@@ -37,7 +37,7 @@
         sleep;
         //no-taps;
         y-invert;
-        x-invert;
+        //x-invert;
         //scroll;
     };
 };
